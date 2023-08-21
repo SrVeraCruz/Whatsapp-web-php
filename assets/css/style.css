@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100vh;
+  background: linear-gradient(
+  #009688 0%, 
+  #009688 8rem, 
+  #d9dbd5 8rem, 
+  #d9dbd5 100%
+  );
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 80rem;
+  min-width: 100%;
+  background-color: #fff;
+  height: calc(100vh - 2.5rem);
+  box-shadow: 0 .2rem .5rem rgba(0, 0, 0, 0.06), 0 .1rem .1rem rgba(0, 0, 0, 0.06);
+}
+
+.container .leftSide {
+  position: relative;
+  flex: 30%;
+  background-color: #fff;
+  border-right: .1rem solid rgba(0, 0, 0, 0.2);
+}
+
+.container .rigthSide {
+  position: relative;
+  flex: 70%;
+  background-color: #e5ddd5;
+}
+
+.container .rigthSide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/fundo.png");
+  opacity: 0.06;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 3.5rem;
+  background: #ededed;
+  padding: 0 1rem;
+}
+
+.box-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.box-img .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.nav-icons li {
+  display: flex;
+  list-style: none;
+  font-size: 1.5rem;
+  color: #51585c;
+  cursor: pointer;
+}
+
+.searchSite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 3.1rem;
+  padding: 0 1rem;
+}
+
+.searchSite div {
+  width: 100%;
+}
+
+.searchSite div input {
+  width: 100%;
+  height: 2.4rem;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 1.8rem;
+  padding: .6rem;
+  padding-left: 2.5rem;
+  font-size: 1rem;
+}
+
+.searchSite div input::placeholder {
+  color: #bbb;
+}
+
+.searchSite div ion-icon {
+  position: absolute;
+  top: .8rem;
+  left: 1.8rem;
+  font-size: 1.2rem;
+}
+
+.contactList {
+  position: relative;
+  height: calc(100% - 6.8rem);
+  overflow: auto;
+}
+
+.contactList .contactBlock {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: .1rem solid rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+.contactList .contactBlock.active {
+  background-color: #ebebeb;
+}
+
+.contactList .contactBlock:hover {
+  background-color: #f5f5f5;
+}
+
+.contactList .contactBlock .box-img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: .7rem;
+}
+
+.contactList .contactBlock .details {
+  position: relative;
+  width: 100%;
+}
+
+.contactList .contactBlock .details .topList {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+}
+
+.contactList .contactBlock .details .topList h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.contactList .contactBlock .details .topList .time {
+  font-size: .75rem;
+  color: #aaa;
+}
+
+.contactList .contactBlock.notread .details .topList .time {
+  color: #06d755;
+}
+
+.contactList .contactBlock .details .smallText {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactList .contactBlock .details .smallText b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #06d755;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  color: #fff;
+  font-size: .75rem;
+  border-radius: 50%;
+}
+
+.contactList .contactBlock .details .smallText p {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: #aaa;
+  font-size: .9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.imgText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.imgText h4 {
+  font-size: 500;
+  line-height: 1.2rem;
+  margin-left: .8rem;
+}
+
+.imgText h4 span {
+  color: #555;
+  font-size: .75rem;
+}
+
+.chatBox {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 7.5rem);
+  overflow-y: auto;
+  padding: 3.1rem;
+}
+
+.message {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: .5rem 0;
+}
+
+.message p {
+  position: relative;
+  right: 0;
+  text-align: right;
+  max-width: 65%;
+  padding: .7rem;
+  background-color: #dcf8c8;
+  border-radius: .6rem;
+  font-size: .9rem;
+}
+
+.message p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -.7rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: linear-gradient(
+  135deg,
+  #dcf8c6 0%,
+  #dcf8c6 50%,
+  transparent 50%,
+  transparent
+  );
+}
+
+.message p span {
+  display: block;
+  margin-top: .5rem;
+  font-size: .85rem;
+  opacity: .5;
+}
+
+.my_message {
+  justify-content: flex-end;
+}
+
+.client_message {
+  justify-content: flex-start;
+}
+
+.client_message p {
+  background-color: #fff;
+  text-align: left;
+}
+
+.client_message p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -.7rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: linear-gradient(
+  225deg,
+  #fff 0%,
+  #fff 50%,
+  transparent 50%,
+  transparent
+  );
+}
+
+.messageInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 3.75rem;
+  background-color: #f0f0f0;
+  padding: 1rem;
+}
+
+.messageInput ion-icon {
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #51585c;
+}
+
+.messageInput ion-icon:nth-child(1) {
+  margin-right: 1rem;
+}
+
+.messageInput input {
+  position: relative;
+  outline: none;
+  border: none;
+  width: 90%;
+  font-size: 1rem;
+  border-radius: 1.8rem;
+  margin: 0 1.25rem;
+  padding: .6rem 1.25rem;
+}
